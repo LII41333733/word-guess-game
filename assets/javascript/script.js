@@ -1,28 +1,56 @@
-var hangman = {
+var gameVars = {
   gameStart: true,
   gameOver: true,
-  currentGuessed = "",
+  currentGuessed: "",
   wins: 0,
-  currentWord: wordPool[Math.random(wordPool)],
-  wordPool: ["MARK", "JAVASCRIPT", "HTML", "CSS"], 
+  wordPool: ["MARK", "JAVASCRIPT", "HTML", "CSS", "CODE", "JQUERY"], 
+  currentWord: "",
   guessesRemaining: 10,
   guessedChars: [],
-  solution = "",
-  createSolution: function() {     // "_ _ _ _ _ _"
-    // if 'currentGuessed' matches a char in 
+  solution: "",
+}
+
+var gameFuncs = {
+
+  setCurrentWord: function() {
+    gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
   },
+
+  createSolution: function() {     // "_ _ _ _ _ _"
+ 
+  },
+
   matchLoop: function() {
     // if 'currentGuessed' matches a char in 'currentWord'
       // 'solutionLoop' --> 'solution'
   },
-  solutionLoop: function() {}, // edits solution after guess
+
+  solutionLoop: function() { // edits solution after guess
+    // if 'currentGuessed' matches a char in 'currentWord'
+      // replace 'createSolution[x]' with 'currentGuessed' 
+  },
 
 }
 
-var gameObj = {
-  //if solution.contains("_") === false {
-    //game over
-}
+gameFuncs.setCurrentWord();
+
+console.log(gameVars.currentWord);
+
+
+
+
+
+
+
+
+document.getElementById("solution").addEventListener("click", function() {document.getElementById("solution").innerHTML = "Go Eagles!";
+});
+
+
+
+  // if !solution.contains("_") {
+    // 'gameOver = true';
+
 
 
 /*
