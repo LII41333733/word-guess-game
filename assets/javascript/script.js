@@ -1,64 +1,72 @@
 var gameVars = {
-  gameStart: true,
-  gameOver: true,
-  currentGuessed: "",
+  gameStart: false, //
+  gameOver: false,
   wins: 0,
   wordPool: ["MARK", "JAVASCRIPT", "HTML", "CSS", "CODE", "JQUERY"], 
   currentWord: "",
   guessesRemaining: 10,
   guessedChars: [],
-  solution:[],
+  blanks:[],
 }
 
 var gameFuncs = {
 
-  setCurrentWord: function() {
+  setWordAndBlanks: function() {
     gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
+    for (var i = 0; i < gameVars.currentWord.length; i++) {
+      gameVars.blanks.push("_ ");
+    }
+    this.maintainBlanks();
   },
 
-  createSolution: function(currentWord) {     // "_ _ _ _ _ _"
-    for (var i = 0; i < currentWord.length; i++) {
-      gameVars.solution.push("_ ");
+  maintainBlanks: function() {
+    document.querySelector("#spaces").innerHTML = "<h1>" + gameVars.blanks.join("") + "<h1>";
+  },
+
+  gamePlay: function(guess) { // edits display after guess
+    // if 'currentGuessed' matches a char in 'currentWord'
+    console.log(guess);
+    console.log(gameVars.currentWord.includes(guess));
+    if (gameVars.currentWord.includes(guess)) {
+      //loop through 'currentWord'
+      for (var i = 0; i < gameVars.currentWord.length; i++) {
+        if (guess === gameVars.currentWord[i]) {
+          gameVars.blanks[i] = guess;
+          this.maintainBlanks();
+        }
+      }
+    } else {
+      console.log(gameVars.guessesRemaining);
+      gameVars.guessesRemaining--;
+      gameVars.guessedChars.push(guess);
+      //Feature: Picture changes
     }
   },
 
-  matchLoop: function() {
-    // if 'currentGuessed' matches a char in 'currentWord'
-      // 'solutionLoop' --> 'solution'
-  },
-
-  wordDisplay: function() { // edits display after guess
-    // if 'currentGuessed' matches a char in 'currentWord'
-      // replace 'createSolution[x]' with 'currentGuessed' 
-  },
-
 }
 
-gameFuncs.setCurrentWord();
-gameFuncs.createSolution(gameVars.currentWord);
+//Creates word and sets 'blanks' variable
+gameFuncs.setWordAndBlanks();
 
-console.log(gameVars.currentWord);
-console.log(gameVars.solution.join(""));
 
-var spaces = "<h1>" + gameVars.solution.join("") + "</h1>";
-var word = gameVars.solution;
+//TEST
+var word = gameVars.currentWord;
+document.querySelector("#word").innerHTML = word;
 
-// Set the inner HTML contents of the #game div to our html string
-document.querySelector("#word").innerHTML = gameVars.currentWord;
-document.querySelector("#spaces").innerHTML = spaces;
+// Event Listeners
 
-// if event.key === 
-
+//When a key is pressed, start 'gamePlay' function
 document.onkeyup = function(event) {
-  if (currentWord.includes(event.key)){
-  
-  
+  gameVars.gameStart = true;
+  var guessedLetter = event.key.toUpperCase();
+  gameFuncs.gamePlay(guessedLetter);
+  if (!gameVars.blanks.join("").includes("_")) {
+    alert("YOU WIN!");
   };
-
 }
 
 
-  // if !solution.contains("_") {
+  // if !blanks.contains("_") {
     // 'gameOver = true';
 
 
@@ -71,7 +79,7 @@ document.onkeyup = function(event) {
 
 3. When key is pressed:
   - push letter to guessedChars
-  - (Function) matchLoop --> (Function) solutionLoop --> 
+  - (Function) matchLoop --> (Function) blanksLoop --> 
   - if wrong, 
     -- guessesremaining--
     else
