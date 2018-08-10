@@ -7,7 +7,7 @@ var gameVars = {
   currentWord: "",
   guessesRemaining: 10,
   guessedChars: [],
-  solution: "",
+  solution:[],
 }
 
 var gameFuncs = {
@@ -16,8 +16,10 @@ var gameFuncs = {
     gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
   },
 
-  createSolution: function() {     // "_ _ _ _ _ _"
- 
+  createSolution: function(currentWord) {     // "_ _ _ _ _ _"
+    for (var i = 0; i < currentWord.length; i++) {
+      gameVars.solution.push("_ ");
+    }
   },
 
   matchLoop: function() {
@@ -25,7 +27,7 @@ var gameFuncs = {
       // 'solutionLoop' --> 'solution'
   },
 
-  solutionLoop: function() { // edits solution after guess
+  wordDisplay: function() { // edits display after guess
     // if 'currentGuessed' matches a char in 'currentWord'
       // replace 'createSolution[x]' with 'currentGuessed' 
   },
@@ -33,19 +35,27 @@ var gameFuncs = {
 }
 
 gameFuncs.setCurrentWord();
+gameFuncs.createSolution(gameVars.currentWord);
 
 console.log(gameVars.currentWord);
+console.log(gameVars.solution.join(""));
 
+var spaces = "<h1>" + gameVars.solution.join("") + "</h1>";
+var word = gameVars.solution;
 
+// Set the inner HTML contents of the #game div to our html string
+document.querySelector("#word").innerHTML = gameVars.currentWord;
+document.querySelector("#spaces").innerHTML = spaces;
 
+// if event.key === 
 
+document.onkeyup = function(event) {
+  if (currentWord.includes(event.key)){
+  
+  
+  };
 
-
-
-
-document.getElementById("solution").addEventListener("click", function() {document.getElementById("solution").innerHTML = "Go Eagles!";
-});
-
+}
 
 
   // if !solution.contains("_") {
