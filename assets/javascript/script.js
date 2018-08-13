@@ -3,13 +3,18 @@ var guessesRemaining = document.querySelector("#guessesRemaining");
 var guessed = document.querySelector("#guessed");
 var start = document.querySelector("#start");
 var reset = document.querySelector("#reset");
+var wins = document.querySelector("#wins");
+var losses = document.querySelector("#losses");
 
 var gameVars = {
   gameStart: false,
   gameOver: false,
   wins: 0,
   losses: 0,
-  wordPool: ["JAVASCRIPT", "HTML", "CSS", "PSEUDOCODE", "JQUERY", "ARRAY", "BOOTSTRAP", "OBJECT", "FUNCTION"],
+  wordPool: ["JAVASCRIPT", "HTML", "CSS", "PSEUDOCODE", "STRING", "NUMBER",
+            "JQUERY", "ARRAY", "BOOTSTRAP", "OBJECT", "FUNCTION", "BOOLEAN",
+            "CONSOLE", "DEVELOPER", "SOFTWARE", "LOOP", "METHOD", "VARIABLE", 
+            "CLASS", "ELEMENT", "CONCATENATION", "INDEX", "OPERATOR", "CODE"],
   currentWord: "",
   guessesRemaining: 10,
   guessedChars: [],
@@ -17,25 +22,27 @@ var gameVars = {
 }
 
 start.onclick = function () {
-  gameVars.currentWord = [];
-  gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
-  gameVars.guessesRemaining = 10;
-  gameVars.wins = 0,
-  gameVars.losses = 0,
-  gameVars.guessedChars = [];
-  gameVars.blanks = [];
-  gameFuncs.updateBlanks();
+  if (!gameVars.gameStart) {
+    guessed.style.visibility = 'hidden'; 
+    guessesRemaining.style.visibility = 'hidden';
+    blanks.style.visibility = 'hidden';
+    gameVars.guessesRemaining = 10;
+    gameVars.guessedChars = [];
+    gameVars.blanks = [];
+    gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
+    for (var i = 0; i < gameVars.currentWord.length; i++) {
+      gameVars.blanks.push("_ ");
+    }
+  }
+  console.log(gameVars.currentWord);  
+  gameVars.gameStart = true;
+  gameFuncs.updateHTML();
   guessed.style.visibility = 'visible';
   guessesRemaining.style.visibility = 'visible';
   blanks.style.visibility = 'visible';
-  gameVars.gameStart = true;
-  console.log(gameVars.currentWord);
 }
 
-reset.onclick = function () {
-  gameFuncs.resetGame();
-  gameVars.gameStart = false;
-}
+
 
 document.onkeyup = function (event) {
   if (gameVars.gameStart) {
@@ -48,49 +55,49 @@ document.onkeyup = function (event) {
 
 var gameFuncs = {
 
-  resetGame: function () {
-    guessed.style.visibility = 'hidden'; 
-    guessesRemaining.style.visibility = 'hidden';
-    blanks.style.visibility = 'hidden';
-  },
+  gamePlay: function (guessedLetter) {
 
-  updateBlanks: function () {
-    if (!gameVars.gameStart) {
+    if (gameVars.currentWord.includes(guessedLetter)) {
       for (var i = 0; i < gameVars.currentWord.length; i++) {
-        gameVars.blanks.push("_ ");
-      }
-    }
-    blanks.innerHTML = "<h1>" + gameVars.blanks.join("") + "<h1>";
-  },
-
-  gamePlay: function (guess) {
-    if (gameVars.currentWord.includes(guess)) {
-      for (var i = 0; i < gameVars.currentWord.length; i++) {
-        if (guess === gameVars.currentWord[i]) {
-          gameVars.blanks[i] = guess;
-          gameFuncs.updateBlanks();
+        if (gameVars.currentWord[i] === guessedLetter) {
+          gameVars.blanks[i] = guessedLetter;
         }
       }
-      setTimeout(function () {
-        if (!gameVars.blanks.includes("_")) {
-          alert("YOU WIN!");
-        }
-      }, 0);
     } else {
-      if (!gameVars.guessedChars.includes(guess)) {
-        gameVars.guessedChars.push(guess);
-        guessed.innerHTML = gameVars.guessedChars.join(" ");
+      if (!gameVars.guessedChars.includes(guessedLetter)) {
+        gameVars.guessedChars.push(guessedLetter);
         gameVars.guessesRemaining--;
-        guessesRemaining.innerHTML = gameVars.guessesRemaining;
       }
-
-      if (gameVars.guessesRemaining === 0) {
-        setTimeout(function () {
-          alert("YOU LOSE! THE CODE WAS: " + gameVars.currentWord);
-        }, 0);
-        gameVars.gameStart = false;
-      }
-
     }
-  }
+
+    this.updateHTML();
+
+    if (!gameVars.blanks.includes("_ ")) {
+      start.innerHTML = "PLAY AGAIN?";
+      wins.innerHTML++;
+      gameVars.gameStart = false;
+      setTimeout(function () {
+        alert("YOU WIN!");
+      }, 0);
+    }
+
+    if (gameVars.guessesRemaining === 0) {
+      start.innerHTML = "PLAY AGAIN?";
+      losses.innerHTML++;
+      gameVars.gameStart = false;
+      setTimeout(function () {
+        alert("YOU LOSE! THE CODE WAS: " + gameVars.currentWord);
+      }, 0);
+    }
+  },
+
+  updateHTML: function() {
+    blanks.innerHTML = "<h1>" + gameVars.blanks.join("") + "<h1>";
+    guessesRemaining.innerHTML = gameVars.guessesRemaining;
+    guessed.innerHTML = gameVars.guessedChars.join(" ");
+    start.innerHTML = "START";
+  },
+
+
+
 }
