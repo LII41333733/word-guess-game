@@ -5,10 +5,11 @@ var start = document.querySelector("#start");
 var reset = document.querySelector("#reset");
 var wins = document.querySelector("#wins");
 var losses = document.querySelector("#losses");
+var result = document.querySelector("#result");
 
 var gameVars = {
   gameStart: false,
-  gameOver: false,
+  result,
   wins: 0,
   losses: 0,
   wordPool: ["JAVASCRIPT", "HTML", "CSS", "PSEUDOCODE", "STRING", "NUMBER",
@@ -24,6 +25,7 @@ var gameVars = {
 start.onclick = function () {
   if (!gameVars.gameStart) {
     guessed.style.visibility = 'hidden'; 
+    result.style.visibility = 'hidden'; 
     guessesRemaining.style.visibility = 'hidden';
     blanks.style.visibility = 'hidden';
     gameVars.guessesRemaining = 10;
@@ -56,7 +58,6 @@ document.onkeyup = function (event) {
 var gameFuncs = {
 
   gamePlay: function (guessedLetter) {
-
     if (gameVars.currentWord.includes(guessedLetter)) {
       for (var i = 0; i < gameVars.currentWord.length; i++) {
         if (gameVars.currentWord[i] === guessedLetter) {
@@ -74,25 +75,26 @@ var gameFuncs = {
 
     if (!gameVars.blanks.includes("_ ")) {
       start.innerHTML = "PLAY AGAIN?";
-      wins.innerHTML++;
+      gameVars.wins++;
+      wins.innerHTML = gameVars.wins;
       gameVars.gameStart = false;
-      setTimeout(function () {
-        alert("YOU WIN!");
-      }, 0);
+      result.style.visibility = 'visible';
+      result.innerHTML = "YOU WIN";
     }
 
     if (gameVars.guessesRemaining === 0) {
+      blanks.innerHTML = gameVars.currentWord;
       start.innerHTML = "PLAY AGAIN?";
-      losses.innerHTML++;
+      gameVars.losses++;
+      losses.innerHTML = gameVars.losses;
       gameVars.gameStart = false;
-      setTimeout(function () {
-        alert("YOU LOSE! THE CODE WAS: " + gameVars.currentWord);
-      }, 0);
+      result.style.visibility = 'visible';
+      result.innerHTML = "YOU LOSE! THE CODE WAS: ";
     }
   },
 
   updateHTML: function() {
-    blanks.innerHTML = "<h1>" + gameVars.blanks.join("") + "<h1>";
+    blanks.innerHTML = gameVars.blanks.join("");
     guessesRemaining.innerHTML = gameVars.guessesRemaining;
     guessed.innerHTML = gameVars.guessedChars.join(" ");
     start.innerHTML = "START";

@@ -1,9 +1,9 @@
-h1 {
-  color: blue;
+#result {
+  color: magenta;
+  height: 20px;
 }
 
-#blanks, h1{
-  display: block;
-  margin: 0;
-  height: 50px;
+#blanks {
+  color: green;
+  height: 20px;
 }
