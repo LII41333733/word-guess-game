@@ -1,5 +1,7 @@
 /* https://www.billboard.com/articles/list/473830/michael-jackson-songs-best-hits-list */
 
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -8,6 +10,10 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  font-family: 'Unica One', cursive;
+  /* font-family: 'Fira Sans Extra Condensed', sans-serif; */
+
 }
 
 .vertical-center {
@@ -16,10 +22,12 @@ html, body {
   align-items: center;
 }
 
-.game {
-  height: 80%;
+.game-div {
+  height: 760px;
   width: 45%;
-  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-right: 50px;
+  background-color: rgba(72, 119, 137, 0.2);
 }
 
 #result {
@@ -30,4 +38,26 @@ html, body {
 #blanks {
   color: green;
   height: 20px;
+}
+
+.title {
+  font-size: 40px;
+  margin: 0;
+  line-height: 40px;
+  margin: 10px 0;
+}
+
+.top {
+  padding-top: 20px;
+}
+
+.subtitle {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 30px;
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+#MJ {
+  font-size: 70px;
 }

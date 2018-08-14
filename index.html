@@ -9,13 +9,29 @@
       crossorigin="anonymous">
   <title>Escape the Portal!</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Economica|Fira+Sans+Extra+Condensed|Quantico|Unica+One" rel="stylesheet">
+
 </head>
 <body>
-    <div class="vertical-center">
-        <div class="float-right game">
+    <div class="vertical-center d-flex justify-content-end">
+        <div class="game-div">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="subtitle top">THE</p>
+                </div>
 
-            <p>Crack the Code and</p>
-            <p>Escape the Portal!</p>
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="title" id="MJ">Michael Jackson</p>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center">
+                        <p class="subtitle">GREATEST HITS WORD GAME</p>
+                </div>
+                
+
+            </div>
+
+
             <p id="result"></p>
             <p id="blanks"></p>
             <p>Guesses Remaining: <span id="guessesRemaining"></span></p>
@@ -24,7 +40,7 @@
             <p>Losses: <span id="losses">0</span></p>
 
             <button id="start">START</button>
-            
+
         </div>
     </div>
 
