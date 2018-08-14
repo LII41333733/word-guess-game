@@ -12,10 +12,11 @@ var gameVars = {
   result,
   wins: 0,
   losses: 0,
-  wordPool: ["JAVASCRIPT", "HTML", "CSS", "PSEUDOCODE", "STRING", "NUMBER",
-            "JQUERY", "ARRAY", "BOOTSTRAP", "OBJECT", "FUNCTION", "BOOLEAN",
-            "CONSOLE", "DEVELOPER", "SOFTWARE", "LOOP", "METHOD", "VARIABLE", 
-            "CLASS", "ELEMENT", "CONCATENATION", "INDEX", "OPERATOR", "CODE"],
+  wordPool: ["MICHAEL JACKSON"],
+  // wordPool: ["JAVASCRIPT", "HTML", "CSS", "PSEUDOCODE", "STRING", "NUMBER",
+  //           "JQUERY", "ARRAY", "BOOTSTRAP", "OBJECT", "FUNCTION", "BOOLEAN",
+  //           "CONSOLE", "DEVELOPER", "SOFTWARE", "LOOP", "METHOD", "VARIABLE", 
+  //           "CLASS", "ELEMENT", "CONCATENATION", "INDEX", "OPERATOR", "CODE"],
   currentWord: "",
   guessesRemaining: 10,
   guessedChars: [],
@@ -31,9 +32,16 @@ start.onclick = function () {
     gameVars.guessesRemaining = 10;
     gameVars.guessedChars = [];
     gameVars.blanks = [];
-    gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
+    // gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
+    gameVars.currentWord = "MICHAEL JACKSON";
     for (var i = 0; i < gameVars.currentWord.length; i++) {
-      gameVars.blanks.push("_ ");
+      if (gameVars.currentWord[i].includes(/[a-zA-Z]/)) {
+        gameVars.blanks.push("_ ");
+        console.log(gameVars.blanks);
+      } else {
+        gameVars.blanks.push("  ");
+        console.log(gameVars.blanks);
+      }
     }
   }
   console.log(gameVars.currentWord);  
