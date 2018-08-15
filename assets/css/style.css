@@ -21,7 +21,15 @@ html, body {
   align-items: center;
 }
 
-.game-div {
+.game-div-left {
+  height: 600px;
+  width: 45%;
+  background-color: red;
+  opacity: 0.1;
+  margin-left: 50px;
+}
+
+.game-div-right {
   height: 650px;
   width: 45%;
   border-radius: 5px;
@@ -41,7 +49,7 @@ html, body {
   height: 30px;
   width: 90%;
   border: 1px solid black;
-  margin: 5px 0;
+  margin: 0;
   padding: 0;
   line-height: 30px;
   text-align: center;
@@ -53,10 +61,11 @@ html, body {
   font-size: 70px;
   margin: 0;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .top {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .subtitle {
