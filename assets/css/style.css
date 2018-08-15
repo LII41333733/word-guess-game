@@ -10,7 +10,6 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
   font-family: 'Unica One', cursive;
   /* font-family: 'Fira Sans Extra Condensed', sans-serif; */
 
@@ -23,28 +22,37 @@ html, body {
 }
 
 .game-div {
-  height: 760px;
+  height: 650px;
   width: 45%;
   border-radius: 5px;
   margin-right: 50px;
   background-color: rgba(72, 119, 137, 0.2);
 }
 
-#result {
-  color: magenta;
-  height: 20px;
-}
 
 #blanks {
-  color: green;
-  height: 20px;
+  color: #c4130f;
+  line-height: 50px;
+  font-size: 50px;
+  padding: 0;
+}
+
+#result {
+  height: 30px;
+  width: 90%;
+  border: 1px solid black;
+  margin: 5px 0;
+  padding: 0;
+  line-height: 30px;
+  text-align: center;
+  /* visibility: hidden; */
 }
 
 .title {
-  font-size: 40px;
+  line-height: 60px;
+  font-size: 70px;
   margin: 0;
-  line-height: 40px;
-  margin: 10px 0;
+  letter-spacing: 2px;
 }
 
 .top {
@@ -56,8 +64,18 @@ html, body {
   font-size: 30px;
   margin: 0;
   letter-spacing: 4px;
+  line-height: 40px;
 }
 
-#MJ {
-  font-size: 70px;
+.btn-block {
+  width: 60%;
+  margin: 10px 0;
+}
+
+
+.img-space {
+  height: 325px;
+  width: 325px;
+  background-color: black;
+  margin-top: 10px;
 }

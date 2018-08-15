@@ -1,45 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous">
-  <title>Escape the Portal!</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Economica|Fira+Sans+Extra+Condensed|Quantico|Unica+One" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <title>Escape the Portal!</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Economica|Fira+Sans+Extra+Condensed|Quantico|Unica+One"
+        rel="stylesheet">
 
 </head>
+
 <body>
     <div class="vertical-center d-flex justify-content-end">
         <div class="game-div">
             <div class="row">
+
                 <div class="col-12 d-flex justify-content-center">
-                    <p class="subtitle top">THE</p>
+                    <span class="subtitle top">THE</span>
                 </div>
 
                 <div class="col-12 d-flex justify-content-center">
-                    <p class="title" id="MJ">Michael Jackson</p>
+                    <span class="title" id="MJ">Michael Jackson</span>
                 </div>
 
                 <div class="col-12 d-flex justify-content-center">
-                        <p class="subtitle">GREATEST HITS WORD GAME</p>
+                    <span class="subtitle">GREATEST HITS WORD GAME</span>
                 </div>
-                
+
+                <div class="col-12 d-flex justify-content-center">
+                    <button id="start" type="button" class="btn btn-outline-dark btn-block">START</button>
+                </div>
+
+                <!-- FEATURE!! SLOW DISPLAY FROM NOTHING AS A QUOTE OVER MICHAEL ON LEFT AT RESULT -->
+
+                <div class="col-12 d-flex justify-content-center">
+                    <span id="result">Insert Quote Here</span>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center">
+                    <span id="blanks">Hello</span>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="img-space">
+
+                    </div>
+                </div>
+
+
+                    <p>Guesses Remaining:
+                        <span id="guessesRemaining"></span>
+                    </p>
+                    <p>Guessed Letters:
+                        <span id="guessed"></span>
+                    </p>
+                    <p>Wins:
+                        <span id="wins">0</span>
+                    </p>
+                    <p>Losses:
+                        <span id="losses">0</span>
+                    </p>
+
 
             </div>
 
 
-            <p id="result"></p>
-            <p id="blanks"></p>
-            <p>Guesses Remaining: <span id="guessesRemaining"></span></p>
-            <p>Guessed Letters: <span id="guessed"></span></p>
-            <p>Wins: <span id="wins">0</span></p>
-            <p>Losses: <span id="losses">0</span></p>
 
-            <button id="start">START</button>
+
 
         </div>
     </div>
@@ -50,8 +81,8 @@
 
 
 
-    
-<!-- Optional JavaScript -->
+
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -59,6 +90,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./assets/javascript/script.js"></script>
+    <script type="text/javascript" src="./assets/javascript/script.js"></script>
 </body>
+
 </html>
