@@ -18,66 +18,37 @@ html, body {
 
 }
 
-.vertical-center {
+.background {
   background: url("../images/mjBackground.jpeg");
   background-color: white;
   background-size: contain;
   background-repeat: no-repeat;
   height: 700px;
+}
+
+.vertical-center {
   display: flex;
   align-items: center;
+  position: relative;
+  justify-content: space-between;
 }
+
+
+.layer {
+  background-color: rgba(72, 119, 137, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
 
 .btn {
   width: 80%;
 }
 
-
-/* .game-div-left {
-  height: 600px;
-  width: 45%;
-  background-color: red;
-  opacity: 0.1;
-  margin-left: 50px;
-} */
-
-
-
-
-/* #blanks {
-  color: #c4130f;
-  line-height: 50px;
-  font-size: 50px;
-  padding: 0;
-} */
-
-/* #result {
-  height: 30px;
-  width: 90%;
-  border: 1px solid black;
-  margin: 0;
-  padding: 0;
-  line-height: 30px;
-  text-align: center;
-  /* visibility: hidden; */
-
-/* .title {
-  line-height: 60px;
-  font-size: 70px;
-  margin: 0;
-  letter-spacing: 2px;
-  text-align: center;
-} */
-
-
-
-/* .subtitle {
-  font-family: 'Fira Sans Extra Condensed', sans-serif;
-  font-size: 30px;
-  margin: 0;
-  letter-spacing: 4px;
-  line-height: 40px;
-} */
 
 
 
@@ -85,20 +56,14 @@ html, body {
 .img-space {
   height: 320px;
   width: 320px;
-  background-color: red;
+  background-color: #0c1b20;;
   margin: 0 auto;
 }
 
 
 
 
-/* .game-div-right {
-  height: 650px;
-  width: 45%;
-    margin-right: 50px;
-  border-radius: 5px;
 
-  background-color: rgba(72, 119, 137, 0.2); */
 
   p:first-of-type {
     margin-bottom: 70px;
@@ -129,11 +94,71 @@ h1, h2, h3, h4, p, .row, .container {
 .left-game-div {
   border: 1px solid red;
   color: white;
+  width: 400px;
+  margin-left: 90px;
 }
 
 .right-game-div{
-  height: 700px;
+  height: 650px;
   border-radius: 5px;
-  margin: 0 150px 0 0; 
+  margin-right: 20px;
+  width: 850px;
   background-color: rgba(72, 119, 137, 0.2);
+  /* border: 1px solid red; */
 }
+
+h1 {
+  font-family: cursive;
+}
+
+
+
+
+/* .game-div-left {
+  height: 600px;
+  width: 45%;
+  background-color: red;
+  opacity: 0.1;
+  margin-left: 50px;
+} */
+
+/* #blanks {
+  color: #c4130f;
+  line-height: 50px;
+  font-size: 50px;
+  padding: 0;
+} */
+
+/* #result {
+  height: 30px;
+  width: 90%;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  line-height: 30px;
+  text-align: center;
+  /* visibility: hidden; */
+
+/* .title {
+  line-height: 60px;
+  font-size: 70px;
+  margin: 0;
+  letter-spacing: 2px;
+  text-align: center;
+} */
+
+/* .subtitle {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 30px;
+  margin: 0;
+  letter-spacing: 4px;
+  line-height: 40px;
+} */
+
+/* .game-div-right {
+  height: 650px;
+  width: 45%;
+    margin-right: 50px;
+  border-radius: 5px;
+
+  background-color: rgba(72, 119, 137, 0.2); */
