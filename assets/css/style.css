@@ -1,8 +1,8 @@
 /* https://www.billboard.com/articles/list/473830/michael-jackson-songs-best-hits-list */
 
-.container, .side, .middle {
+/* .container, .side, .middle {
   border: 1px solid red;
-}
+} */
 
 * {
   color: black;;
@@ -10,11 +10,12 @@
 
 
 html, body {
-  background-color: rgb(13, 25, 31);
+  background-color: black;
+  padding-top: 20px;
   font-family: 'Unica One', cursive;
   /* font-family: 'Fira Sans Extra Condensed', sans-serif; */
   text-align: center;
-  padding-top: 20px;
+
 }
 
 .vertical-center {
@@ -22,7 +23,7 @@ html, body {
   background-color: white;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 700px;
+  height: 750px;
   display: flex;
   align-items: center;
 }
@@ -126,13 +127,13 @@ h1, h2, h3, h4, p, .row, .container {
 }
 
 .left-game-div {
-  width: 40%;
+  border: 1px solid red;
+  color: white;
 }
 
 .right-game-div{
   height: 700px;
-  width: 60%;
   border-radius: 5px;
-padding: 0 50px 0 0; 
+  margin: 0 150px 0 0; 
   background-color: rgba(72, 119, 137, 0.2);
 }
