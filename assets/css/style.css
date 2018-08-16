@@ -12,8 +12,8 @@
 html, body {
   background-color: #0c1b20;
   padding-top: 20px;
-  font-family: 'Unica One', cursive;
-  /* font-family: 'Fira Sans Extra Condensed', sans-serif; */
+  /* font-family: 'Unica One', cursive; */
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
   text-align: center;
 
 }
@@ -46,16 +46,13 @@ html, body {
 
 
 .btn {
-  width: 80%;
+  width: 10%;
+  margin: 10px 20px;
 }
 
-
-
-
-
 .img-space {
-  height: 320px;
-  width: 320px;
+  height: 350px;
+  width: 350px;
   background-color: #0c1b20;;
   margin: 0 auto;
 }
@@ -84,39 +81,45 @@ h1, h2, h3, h4, p, .row, .container {
 }
 
 .right-top {
-  height: 35%;
+
 }
 
 .row {
-  height: 65%;
+  /* border: 1px solid red; */
 }
 
 .left-game-div {
-  border: 1px solid #0c1b20;;
+  border: 1px solid #0c1b20;
   color: white;
   width: 400px;
   margin-left: 90px;
 }
 
 .right-game-div{
+  padding: 10px;
   height: 650px;
   border-radius: 5px;
   margin-right: 55px;
-  width: 850px;
+  width: 800px;
   background-color: rgba(72, 119, 137, 0.2);
   /* border: 1px solid red; */
 }
 
 h1 {
-  /* font-family: cursive; */
+  font-family: 'Mr Dafoe', cursive;
   font-size: 4rem;
-  letter-spacing: 10px;
+  letter-spacing: 1px;
 }
 
 h2 {
-  letter-spacing: 4px;
+  letter-spacing: 10px;
 }
 
+h3 {
+  height: 60px;
+  line-height: 60px;
+  margin: 0 30px;
+}
 
 
 
