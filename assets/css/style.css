@@ -92,7 +92,7 @@ h1, h2, h3, h4, p, .row, .container {
 }
 
 .left-game-div {
-  border: 1px solid red;
+  border: 1px solid #0c1b20;;
   color: white;
   width: 400px;
   margin-left: 90px;
@@ -101,14 +101,20 @@ h1, h2, h3, h4, p, .row, .container {
 .right-game-div{
   height: 650px;
   border-radius: 5px;
-  margin-right: 20px;
+  margin-right: 55px;
   width: 850px;
   background-color: rgba(72, 119, 137, 0.2);
   /* border: 1px solid red; */
 }
 
 h1 {
-  font-family: cursive;
+  /* font-family: cursive; */
+  font-size: 4rem;
+  letter-spacing: 10px;
+}
+
+h2 {
+  letter-spacing: 4px;
 }
 
 
