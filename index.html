@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <title>Escape the Portal!</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Economica|Fira+Sans+Extra+Condensed|Mr+Dafoe|Quantico|Unica+One|Pinyon+Script"
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Economica|Yellowtail|Mr+Dafoe|Quantico|Unica+One|Pinyon+Script"
         rel="stylesheet">
 
 </head>
@@ -20,34 +20,45 @@
         <div class="vertical-center layer">
 
 
-                <h4 id="result"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem </h4>
+                <h4 class="result"></h4>
 
 
             <div class="container right-game-div">
 
                 <h2 class="subtitle">THE</h2>
-                <h1>Michael Jackson</h1>
+                <h1>Michael&nbsp; Jackson</h1>
                 <h2 class="subtitle">GREATEST HITS WORD GAME</h2>
                 <span class="customHR">_________________</span>
                 <button id="start" type="button" class="btn btn-outline-dark">START</button>
                 <span class="customHR">_________________</span>
-                <h3 id="blanks">HELLO</h3>
+                <h3 id="blanks">- A Tribute To The King of Pop -</h3>
                 <div class="main">
-                    <h5 class="left">GUESSES<br>REMAINING<br><div class="pocket-1"><span id="guessesRemaining"></span></div></h5>
-                    <h5 class="left">GUESSED<br>LETTERS<br><div class="pocket-2"><span id="guessed"></span></div></h5>
+                    <h5 class="left" id="space-1">GUESSES<br>REMAINING<br></h5>
+                    <div class="pocket-1" id="space-2"><span id="guessesRemaining"></span></div>
+                    <h5 class="left" id="space-3">GUESSED<br>LETTERS<br></h5>
+                    <div class="pocket-2" id="space-4"><span id="guessed"></span></div>
 
                     <div class="middle">
-                        <!-- <div class="fling-minislide">
-                            <img src="http://placehold.jp/24/845687/993333/250x250.png" alt="Slide 4" />
-                            <img src="http://placehold.jp/24/684842/993333/250x250.png" alt="Slide 3" />
-                            <img src="http://placehold.jp/24/181665/993333/250x250.png" alt="Slide 2" />
-                            <img src="http://placehold.jp/24/198198/993333/250x250.png" alt="Slide 1" />
+                        <div class="fling-minislide">
+                            <img src="./assets/images/slides/slide-4.jpg" alt="Slide 4" />
+                            <img src="./assets/images/slides/slide-6.jpg" alt="Slide 7" />
+                            <img src="./assets/images/slides/slide-5.jpg" alt="Slide 6" />
+                            <img src="./assets/images/slides/slide-8.jpg" alt="Slide 5" />
+                            <img src="./assets/images/slides/slide-3.jpg" alt="Slide 4" />
+                            <img src="./assets/images/slides/slide-1.jpg" alt="Slide 3" />
+                            <img src="./assets/images/slides/slide-2.jpg" alt="Slide 2" />
 
-                        </div> -->
+                        </div>
                     </div>
 
-                    <h5>WINS<br><span id="wins">0</span></h5>
-                    <h5>LOSSES<br><span id="losses">0</span></h5>
+                    <div class="middle-2">
+                        
+                    </div>
+
+                    <h5 id="space-5">WINS<br><span id="wins">0</span></h5>
+                    
+                    <h5 id="space-6">LOSSES<br><span id="losses">0</span></h5>
+                    
                 </div>
             </div>
         </div>

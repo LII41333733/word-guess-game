@@ -77,6 +77,20 @@ html, body {
   bottom: 0;
   margin-left: auto;
 margin-right: auto;
+z-index: 33;
+}
+.middle-2 {
+  height: 350px;
+  width: 350px;
+  background-color: green;;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: auto;
+margin-right: auto;
+z-index: 9;
 }
 
 
@@ -102,6 +116,8 @@ h1 {
   font-family: 'Mr Dafoe', cursive;
   font-size: 4rem;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 5px #ff000e;
+  color: white;
 }
 
 h2 {
@@ -112,7 +128,7 @@ h3 {
   height: 50px;
   line-height: 50px;
   font-size: 40px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 h4 {
@@ -121,27 +137,42 @@ h4 {
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   position: absolute;
+
 }
 
-h5:nth-child(1) {
-  top: 60px;
-  left:10px;
+#space-1 {
+  top: 70px;
+  left: 17px;
+  border-bottom: 1px solid black;
 }
-h5:nth-child(2) {
-bottom:100px;
-left: 20px;
+
+#space-2 {
+  top: 120px;
 }
-h5:nth-child(4) {
-  right:37px;
-  top: 100px;
+
+#space-3 {
+bottom:140px;
+left: 27px;
+border-bottom: 1px solid black;
 }
-h5:nth-child(5) {
-  right: 25px;
-  bottom: 140px;;
+
+#space-4 {
+  bottom: 45px;
+  left: 24px;
+}
+
+#space-5 {
+  right:40px;
+  top: 90px;
+
+}
+#space-6 {
+  right: 30px;
+  bottom: 140px;
 }
 
 
@@ -151,19 +182,28 @@ h5:nth-child(5) {
 
 
 
-#result {
-  border: 1px solid red;
-  width: 450px;
-  height: 250px;
+.display {
+  /* opacity: 1;
+  transition: 3s opacity; */
+  color: pink;
+}
+
+
+.result {
+  /* border: 1px solid red; */
+  width: 500px;
+  height: 350px;
   line-height: 40px;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  font-family: 'Pinyon Script', cursive;
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+  letter-spacing: 1.5px;
+  font-family: 'Yellowtail', cursive;
   font-size: 2rem;
   position: absolute;
-  left: 60px;
-  top: 220px;
+  left: 36px;
+  top:25%;
   color: white;
-  /* visibility: hidden; */
+
+
 }
 
 .box {
@@ -185,23 +225,38 @@ h5:nth-child(5) {
   line-height: 30px;
 }
 
-.fling-minislide img{ position:absolute; right: 330px; animation:fling-minislide 20s infinite; opacity:0; width: 330px; height: 330px;}
+.fling-minislide img{ position:absolute; right: 0px; animation:fling-minislide 28s infinite; opacity:0; width: 350px; height: 350px;}
 
-@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}} 
-.fling-minislide img:nth-child(4){animation-delay:0s;}
-.fling-minislide img:nth-child(3){animation-delay:5s;}
-.fling-minislide img:nth-child(2){animation-delay:10s;}
-.fling-minislide img:nth-child(1){animation-delay:15s;}
+@keyframes fling-minislide {20%{opacity:1;} 40%{opacity:0;}} 
+.fling-minislide img:nth-child(8){animation-delay:0s;}
+.fling-minislide img:nth-child(7){animation-delay:4s;}
+.fling-minislide img:nth-child(6){animation-delay:8s;}
+.fling-minislide img:nth-child(5){animation-delay:12s;}
+.fling-minislide img:nth-child(4){animation-delay:16s;}
+.fling-minislide img:nth-child(3){animation-delay:20s;}
+.fling-minislide img:nth-child(2){animation-delay:24s;}
 
 .pocket-1 {
-  border: 1px solid red;
-  height: 50px;
-  width: 100px;
+  /* border: 1px solid red; */
+  height: 40px;
+  width: 130px;
   position: absolute;
 }
 .pocket-2 {
-  border: 1px solid red;
-  height: 50px;
+  /* border: 1px solid red; */
+  height: 100px;
   width: 80px;
   position: absolute;
 }
+
+span#guessesRemaining {
+  font-size: 1.3rem;
+}
+span#guessed {
+  font-size: 1.3rem;
+}
+
+h3#blanks {
+  color:#d83f3f;
+}
+

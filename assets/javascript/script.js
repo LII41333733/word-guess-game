@@ -7,7 +7,7 @@ var start = document.querySelector("#start");
 var reset = document.querySelector("#reset");
 var wins = document.querySelector("#wins");
 var losses = document.querySelector("#losses");
-var result = document.querySelector("#result");
+var result = document.querySelector(".result");
 
 var gameVars = {
   gameStart: false,
@@ -81,7 +81,9 @@ var gameFuncs = {
       wins.innerHTML = gameVars.wins;
       gameVars.gameStart = false;
       result.style.visibility = 'visible';
-      result.innerHTML = "of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem ";
+      result.innerHTML = quotes.win[Math.floor((Math.random() * quotes.win.length) + 0)] + "<br><br> You win!";
+
+  
     }
 
     if (gameVars.guessesRemaining === 0) {
@@ -91,7 +93,10 @@ var gameFuncs = {
       losses.innerHTML = gameVars.losses;
       gameVars.gameStart = false;
       result.style.visibility = 'visible';
-      result.innerHTML = "YOU LOSE! THE CODE WAS: ";
+
+      result.innerHTML = quotes.lose;
+      result.classList.toggle("display");
+   
     }
   },
 
@@ -105,3 +110,14 @@ var gameFuncs = {
 
 
 }
+
+var quotes = {
+  win: ["\"Please go for your dreams. <br> Whatever your ideals, you can become whatever you want to become.\"", 
+        "\“In a world filled with hate, <br>we must still dare to hope.\”",
+        "\“The world should be full of love. <br>Love.<br> Love is the  most important thing in the world.\”",
+        "\“It’s better to fail in originality <br>than to succeed in imitation.\”",
+        "\“I’m interested in making a path<br> instead of following a trail.\”",
+        "\“In a world filled with despair,<br> we must still dare to dream.<br> And in a world filled with distrust,<br> we must still dare to believe.\”"
+      ],
+      lose: ["\“I don’t care if the whole world is <br>against you, teasing you or saying <br> you’re not gonna make it. <br><br> Believe in yourself, no matter what.\" <br><br> Try Again"]
+};
