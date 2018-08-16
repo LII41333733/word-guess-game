@@ -1,3 +1,5 @@
+
+
 var blanks = document.querySelector("#blanks");
 var guessesRemaining = document.querySelector("#guessesRemaining");
 var guessed = document.querySelector("#guessed");
@@ -79,7 +81,7 @@ var gameFuncs = {
       wins.innerHTML = gameVars.wins;
       gameVars.gameStart = false;
       result.style.visibility = 'visible';
-      result.innerHTML = "YOU WIN";
+      result.innerHTML = "of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem ";
     }
 
     if (gameVars.guessesRemaining === 0) {
