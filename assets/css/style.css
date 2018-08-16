@@ -1,48 +1,56 @@
 /* https://www.billboard.com/articles/list/473830/michael-jackson-songs-best-hits-list */
 
+.container, .side, .middle {
+  border: 1px solid red;
+}
+
+* {
+  color: black;;
+}
 
 
 html, body {
-  margin: 0;
-  padding: 0;
-  background: url("../images/mjBackground.jpeg") no-repeat center center fixed;
-  background-size: contain;
+  background-color: rgb(13, 25, 31);
   font-family: 'Unica One', cursive;
   /* font-family: 'Fira Sans Extra Condensed', sans-serif; */
-
+  text-align: center;
+  padding-top: 20px;
 }
 
 .vertical-center {
-  min-height: 100vh;
+  background: url("../images/mjBackground.jpeg");
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 700px;
   display: flex;
   align-items: center;
 }
 
-.game-div-left {
+.btn {
+  width: 80%;
+}
+
+
+/* .game-div-left {
   height: 600px;
   width: 45%;
   background-color: red;
   opacity: 0.1;
   margin-left: 50px;
-}
-
-.game-div-right {
-  height: 650px;
-  width: 45%;
-  border-radius: 5px;
-  margin-right: 50px;
-  background-color: rgba(72, 119, 137, 0.2);
-}
+} */
 
 
-#blanks {
+
+
+/* #blanks {
   color: #c4130f;
   line-height: 50px;
   font-size: 50px;
   padding: 0;
-}
+} */
 
-#result {
+/* #result {
   height: 30px;
   width: 90%;
   border: 1px solid black;
@@ -51,51 +59,80 @@ html, body {
   line-height: 30px;
   text-align: center;
   /* visibility: hidden; */
-}
 
-.title {
+/* .title {
   line-height: 60px;
   font-size: 70px;
   margin: 0;
   letter-spacing: 2px;
   text-align: center;
-}
+} */
 
-.top {
-  padding-top: 10px;
-}
 
-.subtitle {
+
+/* .subtitle {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   font-size: 30px;
   margin: 0;
   letter-spacing: 4px;
   line-height: 40px;
-}
+} */
 
-.btn-block {
-  width: 60%;
-  margin: 10px 0;
-}
+
 
 
 .img-space {
-  min-height: 325px;
-  min-width: 325px;
-  background-color: black;
-  margin-top: 10px;
+  height: 320px;
+  width: 320px;
+  background-color: red;
+  margin: 0 auto;
 }
+
+
+
+
+/* .game-div-right {
+  height: 650px;
+  width: 45%;
+    margin-right: 50px;
+  border-radius: 5px;
+
+  background-color: rgba(72, 119, 137, 0.2); */
+
+  p:first-of-type {
+    margin-bottom: 70px;
+  }
+
+
+h1, h2, h3, h4, p, .row, .container {
+    margin: 0;
+    padding: 0;
+  }
 
 .side {
-  text-align: center;
-  font-size: 1.3rem;
-  padding: 0 10px;
+  width: 20%;
 }
 
-.nopad {
-  padding: 0;
+.middle {
+  width: 60%;
 }
 
-.marginbottom {
-  margin-bottom: 100px;
+.right-top {
+  height: 35%;
+}
+
+.row {
+  height: 65%;
+}
+
+.left-game-div {
+  width: 40%;
+}
+
+.right-game-div{
+  height: 700px;
+  width: 60%;
+  border-radius: 5px;
+padding: 0 50px 0 0; 
+  background-color: rgba(72, 119, 137, 0.2);
 }
