@@ -57,6 +57,12 @@ html, body {
   margin: 0 auto;
 }
 
+.customHR {
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-size: 30px;
+}
+
 
 
 
