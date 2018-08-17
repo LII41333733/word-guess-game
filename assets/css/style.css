@@ -1,20 +1,10 @@
-/* https://www.billboard.com/articles/list/473830/michael-jackson-songs-best-hits-list */
-
-/* .container, .side, .middle {
-  border: 1px solid red;
-} */
-
-* {
-  color: black;
-}
-
+/* BODY/BACKGROUND */
 
 html, body {
   background-color: black;
   padding-top: 20px;
   font-family: 'Unica One', sans-serif;
   text-align: center;
-
 }
 
 .background {
@@ -28,9 +18,7 @@ html, body {
 
 .vertical-center {
   position: relative;
-
 }
-
 
 .layer {
   background-color: rgba(72, 119, 137, 0.1);
@@ -41,76 +29,7 @@ html, body {
   height: 100%;
 }
 
-
-
-.btn {
-  width: 25%;
-  margin: 10px 20px;
-}
-
-
-
-.customHR {
-  font-weight: 800;
-  letter-spacing: -2px;
-  font-size: 30px;
-}
-
-
-
-
-.main {
-  /* border: 1px solid blue; */
-  height: 370px;
-  margin-top: 10px;
-  position: relative;
-}
-
-.middle {
-  height: 350px;
-  width: 350px;
-  background-color: #0c1b20;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin-left: auto;
-margin-right: auto;
-z-index: 33;
-}
-.middle-2 {
-  height: 350px;
-  width: 350px;
-  background-color: green;;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin-left: auto;
-margin-right: auto;
-z-index: 9;
-}
-
-
-
-
-
-
-
-.right-game-div{
-  padding: 10px;
-  height: 680px;
-  border-radius: 5px;
-  width: 650px;
-  background-color: rgba(72, 119, 137, 0.2);
-  /* border: 1px solid red; */
-  position: absolute;
-  left: 580px;
-  top: 50px;
-
-}
+/* HEADER TAG STYLING */
 
 h1 {
   font-family: 'Mr Dafoe', cursive;
@@ -131,6 +50,11 @@ h3 {
   /* border: 1px solid red; */
 }
 
+h3#blanks {
+  color:#d83f3f;
+  letter-spacing: 3px;
+}
+
 h4 {
   margin: 0;
   padding: 0;
@@ -144,6 +68,41 @@ h5 {
 
 }
 
+/* MAIN GAME CONTAINER */
+
+.right-game-div{
+  padding: 10px;
+  height: 680px;
+  border-radius: 5px;
+  width: 650px;
+  background-color: rgba(72, 119, 137, 0.2);
+  /* border: 1px solid red; */
+  position: absolute;
+  left: 580px;
+  top: 50px;
+}
+
+.btn {
+  width: 25%;
+  margin: 10px 20px;
+}
+
+.customHR {
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-size: 30px;
+}
+
+#guessed {
+  font-size: 1rem;
+}
+
+.main {
+  height: 370px;
+  margin-top: 10px;
+  position: relative;
+}
+
 #space-1 {
   top: 70px;
   left: 17px;
@@ -152,6 +111,13 @@ h5 {
 
 #space-2 {
   top: 120px;
+}
+
+span#guessesRemaining {
+  font-size: 1.3rem;
+}
+span#guessed {
+  font-size: 1.3rem;
 }
 
 #space-3 {
@@ -170,26 +136,53 @@ border-bottom: 1px solid black;
   top: 90px;
 
 }
+
 #space-6 {
   right: 30px;
   bottom: 140px;
 }
 
+.pocket-1 {
+  height: 40px;
+  width: 130px;
+  position: absolute;
+}
+.pocket-2 {
+  height: 100px;
+  width: 80px;
+  position: absolute;
+}
 
-#guessed {
-  font-size: 1rem;
+.slideshow, .album {
+  height: 350px;
+  width: 350px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.album {
+  background: red;
+  background: url(../images/album-images/6-9.jpg);
+  background-size: 100%;
+  visibility: hidden;
+}
+
+.slideshow{
+  background-color: black;
+  /* visibility: hidden; */
 }
 
 
 
-.display {
-  opacity: 1;
-  
-}
-
+/* QUOTE DIV */
 
 .result {
-  /* border: 1px solid red; */
   width: 500px;
   height: 350px;
   line-height: 40px;
@@ -203,29 +196,11 @@ border-bottom: 1px solid black;
   color: white;
   transition: 2s opacity;
   opacity: 0;
-
 }
 
-.box {
-  width: 750px;
-  height: 350px;
-  margin: 10px auto;
-}
+/* SLIDESHOW */
 
-.space {
-  /* border: 1px solid pink; */
-  height: 60px;
-  margin-top: 10px;
-  font-size: 1.5rem;
-}
-
-
-
-#break{
-  line-height: 30px;
-}
-
-.fling-minislide img{ position:absolute; right: 0px; animation:fling-minislide 28s infinite; opacity:0; width: 350px; height: 350px;}
+.fling-minislide img{z-index: 50; position:absolute; right: 0px; animation:fling-minislide 28s infinite; opacity:0; width: 350px; height: 350px;}
 
 @keyframes fling-minislide {20%{opacity:1;} 40%{opacity:0;}} 
 .fling-minislide img:nth-child(8){animation-delay:0s;}
@@ -236,27 +211,9 @@ border-bottom: 1px solid black;
 .fling-minislide img:nth-child(3){animation-delay:20s;}
 .fling-minislide img:nth-child(2){animation-delay:24s;}
 
-.pocket-1 {
-  /* border: 1px solid red; */
-  height: 40px;
-  width: 130px;
-  position: absolute;
-}
-.pocket-2 {
-  /* border: 1px solid red; */
-  height: 100px;
-  width: 80px;
-  position: absolute;
-}
 
-span#guessesRemaining {
-  font-size: 1.3rem;
-}
-span#guessed {
-  font-size: 1.3rem;
-}
 
-h3#blanks {
-  color:#d83f3f;
-}
+
+
+
 

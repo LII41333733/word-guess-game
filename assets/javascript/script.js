@@ -1,5 +1,3 @@
-
-
 var blanks = document.querySelector("#blanks");
 var guessesRemaining = document.querySelector("#guessesRemaining");
 var guessed = document.querySelector("#guessed");
@@ -8,14 +6,20 @@ var reset = document.querySelector("#reset");
 var wins = document.querySelector("#wins");
 var losses = document.querySelector("#losses");
 var result = document.querySelector(".result");
-
+var albumDiv = document.querySelector(".album");
+var slideshowDiv = document.querySelector(".slideshow");
+ 
 var gameVars = {
   gameStart: false,
   result,
   wins: 0,
   losses: 0,
-  wordPool: ["ABC", "BAD", "BEAT IT", "BILLIE JEAN", "BLACK OR WHITE", "DANGEROUS", "THAT GIRL IS MINE", "HEAL THE WORLD", "INVINCIBLE", "THE WAY YOU MAKE ME FEEL", "MAN IN THE MIRROR", "HUMAN NATURE", "ROCK WITH YOU", "THRILLER"],
+  wordPool: ["ABC", "BAD", "BEAT IT", "BILLIE JEAN", "BLACK OR WHITE",
+             "DANGEROUS", "THAT GIRL IS MINE", "HEAL THE WORLD", "INVINCIBLE",
+             "THE WAY YOU MAKE ME FEEL", "MAN IN THE MIRROR", "HUMAN NATURE",
+             "ROCK WITH YOU", "THRILLER"],
   currentWord: "",
+  albumIndex: 0,
   guessesRemaining: 9,
   guessedChars: [],
   blanks: [],
@@ -23,8 +27,10 @@ var gameVars = {
 
 start.onclick = function () {
   if (!gameVars.gameStart) {
+    result.style.opacity = 0;
+    albumDiv.style.visibility = "hidden";
+    slideshowDiv.style.visibility = "visible";
     guessed.style.visibility = 'hidden'; 
-    result.style.visibility = 'hidden'; 
     guessesRemaining.style.visibility = 'hidden';
     blanks.style.visibility = 'hidden';
     gameVars.guessesRemaining = 9;
@@ -35,11 +41,13 @@ start.onclick = function () {
       if (gameVars.currentWord[i] == " ") {
         gameVars.blanks.push("&nbsp;&nbsp;");
       } else {
-        gameVars.blanks.push("_ ");
+        gameVars.blanks.push("_");
       }
     }
   }
-  console.log(gameVars.currentWord);  
+  console.log(gameVars.currentWord);
+  albumIndex = gameVars.wordPool.indexOf(gameVars.currentWord);
+  console.log(albumIndex);  
   gameVars.gameStart = true;
   gameFuncs.updateHTML();
   guessed.style.visibility = 'visible';
@@ -71,12 +79,25 @@ var gameFuncs = {
       if (!gameVars.guessedChars.includes(guessedLetter)) {
         gameVars.guessedChars.push(guessedLetter);
         gameVars.guessesRemaining--;
+
+        var albumFile = albumIndex + "-" + gameVars.guessesRemaining;
+        console.log(albumFile);
+
+        if (gameVars.guessesRemaining < 9) {
+          albumDiv.style.visibility = "visible";
+          slideshowDiv.style.visibility = "hidden";
+          albumDiv.style.background = "url(../images/album-images/" + albumFile + ".jpg)";
+        }
       }
     }
 
     this.updateHTML();
 
-    if (!gameVars.blanks.includes("_ ")) {
+
+////////////////////////////////// WIN ////////////////////////////////////////////////////
+
+
+    if (!gameVars.blanks.includes("_")) {
       start.innerHTML = "PLAY AGAIN?";
       gameVars.wins++;
       wins.innerHTML = gameVars.wins;
@@ -85,9 +106,9 @@ var gameFuncs = {
       result.innerHTML = quotes.win[Math.floor((Math.random() * quotes.win.length) + 0)] + "<br><br> You win!";
       result.style.opacity = 1;
       gameVars.wordPool.splice(gameVars.wordPool.indexOf(gameVars.currentWord), 1);
-      console.log(gameVars.wordPool);
-  
     }
+
+///////////////////////////LOSE/////////////////////////////////////////////////////////////////////
 
     if (gameVars.guessesRemaining === 0) {
       blanks.innerHTML = gameVars.currentWord;
@@ -95,12 +116,12 @@ var gameFuncs = {
       gameVars.losses++;
       losses.innerHTML = gameVars.losses;
       gameVars.gameStart = false;
+      albumDiv.style.zIndex == "99";
       result.style.visibility = 'visible';
-
       result.innerHTML = quotes.lose;
       result.style.opacity = 1;
       gameVars.wordPool.splice(gameVars.wordPool.indexOf(gameVars.currentWord), 1);
-      console.log(gameVars.wordPool);
+
    
     }
   },
