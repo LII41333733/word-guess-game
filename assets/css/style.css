@@ -169,7 +169,7 @@ border-bottom: 1px solid black;
 .album {
   background: red;
   background: url(../images/album-images/6-9.jpg);
-  background-size: 100%;
+  background-size: cover;
   visibility: hidden;
 }
 

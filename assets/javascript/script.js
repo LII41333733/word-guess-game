@@ -86,7 +86,8 @@ var gameFuncs = {
         if (gameVars.guessesRemaining < 9) {
           albumDiv.style.visibility = "visible";
           slideshowDiv.style.visibility = "hidden";
-          albumDiv.style.background = "url(../images/album-images/" + albumFile + ".jpg)";
+          albumDiv.style.background = "url('assets/images/album-images/" + albumFile + ".jpg')";
+          albumDiv.style.backgroundSize = "cover";
         }
       }
     }
