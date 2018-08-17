@@ -107,7 +107,7 @@ z-index: 9;
   background-color: rgba(72, 119, 137, 0.2);
   /* border: 1px solid red; */
   position: absolute;
-  left: 560px;
+  left: 580px;
   top: 50px;
 
 }
@@ -183,9 +183,8 @@ border-bottom: 1px solid black;
 
 
 .display {
-  /* opacity: 1;
-  transition: 3s opacity; */
-  color: pink;
+  opacity: 1;
+  
 }
 
 
@@ -202,7 +201,8 @@ border-bottom: 1px solid black;
   left: 36px;
   top:25%;
   color: white;
-
+  transition: 2s opacity;
+  opacity: 0;
 
 }
 

@@ -14,12 +14,9 @@ var gameVars = {
   result,
   wins: 0,
   losses: 0,
-  wordPool: ["JAVASCRIPT", "HTML", "CSS", "PSEUDOCODE", "STRING", "NUMBER",
-            "JQUERY", "ARRAY", "BOOTSTRAP", "OBJECT", "FUNCTION", "BOOLEAN",
-            "CONSOLE", "DEVELOPER", "SOFTWARE", "LOOP", "METHOD", "VARIABLE", 
-            "CLASS", "ELEMENT", "CONCATENATION", "INDEX", "OPERATOR", "CODE"],
+  wordPool: ["ABC", "BAD", "BEAT IT", "BILLIE JEAN", "BLACK OR WHITE", "DANGEROUS", "THAT GIRL IS MINE", "HEAL THE WORLD", "INVINCIBLE", "THE WAY YOU MAKE ME FEEL", "MAN IN THE MIRROR", "HUMAN NATURE", "ROCK WITH YOU", "THRILLER"],
   currentWord: "",
-  guessesRemaining: 10,
+  guessesRemaining: 9,
   guessedChars: [],
   blanks: [],
 }
@@ -30,12 +27,16 @@ start.onclick = function () {
     result.style.visibility = 'hidden'; 
     guessesRemaining.style.visibility = 'hidden';
     blanks.style.visibility = 'hidden';
-    gameVars.guessesRemaining = 10;
+    gameVars.guessesRemaining = 9;
     gameVars.guessedChars = [];
     gameVars.blanks = [];
     gameVars.currentWord = gameVars.wordPool[Math.floor((Math.random() * gameVars.wordPool.length) + 0)];
     for (var i = 0; i < gameVars.currentWord.length; i++) {
-      gameVars.blanks.push("_ ");
+      if (gameVars.currentWord[i] == " ") {
+        gameVars.blanks.push("&nbsp;&nbsp;");
+      } else {
+        gameVars.blanks.push("_ ");
+      }
     }
   }
   console.log(gameVars.currentWord);  
@@ -82,7 +83,9 @@ var gameFuncs = {
       gameVars.gameStart = false;
       result.style.visibility = 'visible';
       result.innerHTML = quotes.win[Math.floor((Math.random() * quotes.win.length) + 0)] + "<br><br> You win!";
-
+      result.style.opacity = 1;
+      gameVars.wordPool.splice(gameVars.wordPool.indexOf(gameVars.currentWord), 1);
+      console.log(gameVars.wordPool);
   
     }
 
@@ -95,7 +98,9 @@ var gameFuncs = {
       result.style.visibility = 'visible';
 
       result.innerHTML = quotes.lose;
-      result.classList.toggle("display");
+      result.style.opacity = 1;
+      gameVars.wordPool.splice(gameVars.wordPool.indexOf(gameVars.currentWord), 1);
+      console.log(gameVars.wordPool);
    
     }
   },
@@ -114,10 +119,28 @@ var gameFuncs = {
 var quotes = {
   win: ["\"Please go for your dreams. <br> Whatever your ideals, you can become whatever you want to become.\"", 
         "\“In a world filled with hate, <br>we must still dare to hope.\”",
-        "\“The world should be full of love. <br>Love.<br> Love is the  most important thing in the world.\”",
+        "\“The world should be full of love. <br> Love is the  most important thing in the world.\”",
         "\“It’s better to fail in originality <br>than to succeed in imitation.\”",
         "\“I’m interested in making a path<br> instead of following a trail.\”",
         "\“In a world filled with despair,<br> we must still dare to dream.<br> And in a world filled with distrust,<br> we must still dare to believe.\”"
       ],
-      lose: ["\“I don’t care if the whole world is <br>against you, teasing you or saying <br> you’re not gonna make it. <br><br> Believe in yourself, no matter what.\" <br><br> Try Again"]
+      lose: ["\“I don’t care if the whole world is <br>against you, teasing you or saying <br> you’re not gonna make it. <br><br> Believe in yourself, no matter what.\" <br><br> Try Again!"]
 };
+
+
+// #-9 guesses remaining - 0 squares
+// #-8 - 1 square
+// #-7 - 2 squares
+// #-6 - 3 squares
+// #-5 - 4 squares
+// #-4 - 5 squares
+// #-3 - 6 squares
+// #-2 - 7 squares
+// #-1 - 8 squares
+// #-0 - solved
+
+
+//if an incorrect letter is selected
+  //change index of .middle-2 to 99
+
+//when play is pressed, reset indexes/restore slideshow at start
