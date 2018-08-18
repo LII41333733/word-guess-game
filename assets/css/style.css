@@ -20,14 +20,14 @@ html, body {
   position: relative;
 }
 
-.layer {
+/* .layer {
   background-color: rgba(72, 119, 137, 0.1);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
+} */
 
 /* HEADER TAG STYLING */
 
@@ -78,8 +78,8 @@ h5 {
   background-color: rgba(72, 119, 137, 0.2);
   /* border: 1px solid red; */
   position: absolute;
-  left: 580px;
-  top: 50px;
+  left: 620px;
+  top: 10px;
 }
 
 .btn {
@@ -191,8 +191,8 @@ border-bottom: 1px solid black;
   font-family: 'Yellowtail', cursive;
   font-size: 2rem;
   position: absolute;
-  left: 36px;
-  top:25%;
+  left: 55px;
+  top: 200px;
   color: white;
   transition: 2s opacity;
   opacity: 0;
