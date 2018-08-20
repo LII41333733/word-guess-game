@@ -20,7 +20,7 @@ var gameVars = {
              "ROCK WITH YOU", "THRILLER"],
   wordPoolCopy: ["ABC", "BAD", "BEAT IT", "BILLIE JEAN", "BLACK OR WHITE",
              "DANGEROUS", "THE GIRL IS MINE", "HEAL THE WORLD", "INVINCIBLE",
-             "THE WAY YOU MAKE ME FEEL", "MAN IN THE MIRROR", "HUMAN NATURE",
+             "THE WAY YOU MAKE ME FEEL", "MAN IN THE MIRROR", "PRETTY YOUNG THING",
              "ROCK WITH YOU", "THRILLER"],
   currentWord: "",
   albumIndex: "",
@@ -103,7 +103,7 @@ var gameFuncs = {
     this.updateHTML();
 
 
-////////////////////////////////// WIN ////////////////////////////////////////////////////
+////////////////////////WIN///////////////////////////
 
 
     if (!gameVars.blanks.includes("_")) {
@@ -121,7 +121,7 @@ var gameFuncs = {
       result.style.opacity = 1;
     };
 
-///////////////////////////LOSE/////////////////////////////////////////////////////////////////////
+///////////////////////////LOSE/////////////////////////
 
     if (gameVars.guessesRemaining === 0) {
       albumDiv.style.background = "url('assets/images/album-images/" + albumIndex + "-9.jpg')";
@@ -156,21 +156,3 @@ var quotes = {
       ],
       lose: ["\“I don’t care if the whole world is <br>against you, teasing you or saying <br> you’re not gonna make it. <br><br> Believe in yourself, no matter what.\" <br><br> Try Again!"]
 };
-
-
-// #-9 guesses remaining - 0 squares
-// #-8 - 1 square
-// #-7 - 2 squares
-// #-6 - 3 squares
-// #-5 - 4 squares
-// #-4 - 5 squares
-// #-3 - 6 squares
-// #-2 - 7 squares
-// #-1 - 8 squares
-// #-0 - solved
-
-
-//if an incorrect letter is selected
-  //change index of .middle-2 to 99
-
-//when play is pressed, reset indexes/restore slideshow at start
