@@ -16,7 +16,7 @@ var gameVars = {
   losses: 0,
   wordPool: ["ABC", "BAD", "BEAT IT", "BILLIE JEAN", "BLACK OR WHITE",
              "DANGEROUS", "THE GIRL IS MINE", "HEAL THE WORLD", "INVINCIBLE",
-             "THE WAY YOU MAKE ME FEEL", "MAN IN THE MIRROR", "HUMAN NATURE",
+             "THE WAY YOU MAKE ME FEEL", "MAN IN THE MIRROR", "PRETTY YOUNG THING",
              "ROCK WITH YOU", "THRILLER"],
   wordPoolCopy: ["ABC", "BAD", "BEAT IT", "BILLIE JEAN", "BLACK OR WHITE",
              "DANGEROUS", "THE GIRL IS MINE", "HEAL THE WORLD", "INVINCIBLE",
