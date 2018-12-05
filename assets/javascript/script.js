@@ -54,7 +54,6 @@ start.onclick = function () {
     }
   }
 
-
   albumIndex = gameVars.wordPoolCopy.indexOf(gameVars.currentWord);
 
   gameVars.gameStart = true;
@@ -63,8 +62,6 @@ start.onclick = function () {
   guessesRemaining.style.visibility = 'visible';
   blanks.style.visibility = 'visible';
 }
-
-
 
 document.onkeyup = function (event) {
   if (gameVars.gameStart) {
