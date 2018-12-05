@@ -1,6 +1,6 @@
 # The Michael Jackson Greatest Hits Word Guess Game
 
-[Link to the App](https://lii41333733.github.io/Word-Guess-Game/)
+[Link to the App](https://lii41333733.github.io/word-guess-game/)
 
 ## Introduction
 
