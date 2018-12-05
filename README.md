@@ -22,4 +22,4 @@ The main functionality of the app is to display updating HTML and CSS dynamicall
 ![At Game Start](assets/images/screenshot1.png)
 
 ### During Gameplay
-
+![During Gameplay](assets/images/screenshot2.png)
