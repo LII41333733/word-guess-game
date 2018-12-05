@@ -30,7 +30,7 @@ The main functionality of the app is to display updating HTML and CSS dynamicall
 ![During Gameplay](assets/images/screenshot2.png)
 
 
-## Prospective Improvememts
+## Prospective Improvements
 
 * Spotify API Integration
 * JQuery
