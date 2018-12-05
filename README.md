@@ -34,10 +34,4 @@ The main functionality of the app is to display updating HTML and CSS dynamicall
 
 * Spotify API Integration
 * JQuery
-
-
-## Prospective Improvements
-
-* Spotify API Integration
-* JQuery
 * Bootstrap for Mobile Responsiveness
